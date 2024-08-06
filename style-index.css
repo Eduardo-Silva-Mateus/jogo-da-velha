@@ -1,0 +1,70 @@
+*{
+    background-color: whitesmoke;
+}
+.top{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.top_div{
+    display: flex;
+    gap: 10px;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+}
+.modo-jogo{
+    display: flex;
+    align-content: center;
+    width: 50px  50px;
+    border: 2px solid black;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+.modo-jogo:hover{
+    border: 2px solid black;
+    background-color: aqua;
+}
+.jogo{
+    display:flex ;
+    flex-direction: column;
+    align-items: center;
+    justify-items: space-between;
+    gap: 40px;
+}
+.tabela-jogo{
+    border: 2px solid black;
+    border-collapse: collapse;
+    width: 600px;
+    
+}
+.tabela_linha{
+    border: 1px solid black;
+    border-collapse: collapse;
+    height: 200px;
+
+}
+.tabela_coluna{
+    border: 1px solid black;
+    border-collapse: collapse;
+    height: 200px;
+
+}
+
+.tabela-jogo:hover{
+    background-color: darkgray;
+}
+
+.bnt-reiniciar{
+    background-color: green;
+    font-size: 20px;
+    border-radius: 10px;
+}
+.x{
+    color: black;
+}
+.o{
+    color: red;
+}
