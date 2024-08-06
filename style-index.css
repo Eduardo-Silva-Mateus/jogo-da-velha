@@ -57,14 +57,15 @@
     background-color: darkgray;
 }
 
-.bnt-reiniciar{
-    background-color: green;
-    font-size: 20px;
-    border-radius: 10px;
-}
 .x{
     color: black;
 }
 .o{
     color: red;
+}
+
+.bnt-reiniciar{
+    background-color: green;
+    font-size: 20px;
+    border-radius: 10px;
 }

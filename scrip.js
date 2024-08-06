@@ -10,20 +10,24 @@ for(let i=0; i<3; i++){ // esta criando as linhas
     tabuleiro[i] = [];
     for(let j=0; j<3; j++){ //esta criando as colunas
         tabuleiro[i][j] = '';
-        /*
+        document.getElementById(`celula-${i}-${j}`).addEventListener('click', cliqueNaCelula);
+         /*Chama o objeto document como o metodo getElementById que retotna a referencia do elemento
+          atraves do id. Que por sua vez esta adicionando um evento de espera que será atualizado
+          com um click, e junto deste click chama a função cliqueNaCelular.
+          Observação: O elemento id tem que ser referenciado da mesma forma que foi declarado no html.
         */
-        document.getElementById(`celula-${i}-${j}`).addEventListener('click', cliqueNaCelular);
     }
 }
-function cliqueNaCelular(event) {
+
+function cliqueNaCelula(event) { // cria a função cliqueNaCelula que por sua vez recebe um argumento chamado event
     if (fimJogo) return;
-    const cell = event.target;
-    const row = cell.parentNode.rowIndex;
-    const col = cell.cellIndex;
-    if (tabuleiro[row][col] === '') {
-        tabuleiro[row][col] = jogadorAtual;
-        cell.textContent = jogadorAtual;
-        cell.classList.add(jogadorAtual);
+    const celula = event.target;
+    const linha = celula.parentNode.rowIndex;
+    const coluna = celula.cellIndex;
+    if (tabuleiro[linha][coluna] === '') {
+        tabuleiro[linha][coluna] = jogadorAtual;
+        celula.textContent = jogadorAtual;
+        celula.classList.add(jogadorAtual);
         verificarVencedor();
         jogadorAtual = jogadorAtual === 'x' ? 'o' : 'x';
     }
