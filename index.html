@@ -17,8 +17,8 @@
     </header>
     <main class="jogo">
  
-        <p>Vez do Jogador:</p>
-        <table class="tabela-jogo">
+        <p id="jogadores">Vez do Jogador:</p>
+        <table class="tabela-jogo" id="tabuleiro">
             <tr class="tabela_linha">
                 <td class="tabela_coluna, tabela-jogo" id="celula-0-0"></td>
                 <td class="tabela_coluna, tabela-jogo" id="celula-0-1"></td>
@@ -35,9 +35,11 @@
                 <td class="tabela_coluna, tabela-jogo" id="celula-2-2"></td>
             </tr>
         </table>
+       <div id="status"></div>
+        <button class="bnt-reiniciar" id="reiniciar">Reiniciar</button>
         <script src="scrip.js"></script>
-        <button class="bnt-reiniciar">Reiniciar</button>
-       
+
     </main>
+
 </body>
 </html>
