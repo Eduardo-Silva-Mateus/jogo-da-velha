@@ -1,72 +1,129 @@
 *{
-    background-color: whitesmoke;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-.top{
-    display: flex;
-    align-items: center;
+
+body{
+    height: 100vh;
+    width: 100vh;
+    background: linear-gradient(90deg, rgba(102,165,238, 1)0%, rgba(153,255,255,1)100% );
+}
+
+.tabuleiro{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    display: grid;
     justify-content: center;
-    flex-direction: column;
-}
-.top_div{
-    display: flex;
-    gap: 10px;
+    align-content: center;
     justify-items: center;
     align-items: center;
-    justify-content: center;
+    grid-template-columns: repeat(3, auto);
 }
-.modo-jogo{
+.tabuleiro.x .celula:not(.x):not(.circulo):hover::after,
+.tabuleiro.x .celula:not(.x):not(.circulo):hover::before,
+.tabuleiro.circulo .celula:not(.x):not(.circulo):hover::after,
+.tabuleiro.circulo .celula:not(.x):not(.circulo):hover::before{
+    background: rgba(255,255,255, 0.3) !important;
+}
+/* celula */
+.celula{
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
     display: flex;
-    align-content: center;
-    width: 50px  50px;
-    border: 2px solid black;
-    padding: 10px;
-    text-decoration: none;
-    color: black;
-}
-.modo-jogo:hover{
-    border: 2px solid black;
-    background-color: aqua;
-}
-.jogo{
-    display:flex ;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-items: space-between;
-    gap: 40px;
+    position: relative;
 }
-.tabela-jogo{
-    border: 2px solid black;
-    border-collapse: collapse;
-    width: 600px;
+.celula.x, .celula.circulo{
+    cursor: not-allowed;
+}
+.celula:nth-child(1),
+.celula:nth-child(2),
+.celula:nth-child(3){
+    border-top: none;
+}
+.celula:nth-child(1),
+.celula:nth-child(4),
+.celula:nth-child(7){
+    border-left: none;
+}
+.celula:nth-child(3),
+.celula:nth-child(6),
+.celula:nth-child(9){
+    border-right: none;
+}
+.celula:nth-child(7),
+.celula:nth-child(8),
+.celula:nth-child(9){
+    border-bottom: none;
+}
+/* X */
+.celula.x::before,
+.celula.x::after,
+.tabuleiro.x .celula:not(.x):not(.circulo):hover::after,
+.tabuleiro.x .celula:not(.x):not(.circulo):hover::before{
+    content: "";
+    height: calc(100px *0.15);
+    width: calc(100px*0.9);
+    background: black;
+    position: absolute;
+}
+.celula.x::before,
+.tabuleiro.x .celula:not(.x):not(.circulo):hover::before{
+    transform: rotate(45deg);
+}
+.celula.x::after,
+.tabuleiro.x .celula:not(.x):not(.circulo):hover::after{
+    transform: rotate(-45deg);
+}
+
+/*Circulo*/
+.celula.circulo::before,
+.celula.circulo::after,
+.tabuleiro.circulo .celula:not(.x):not(.circulo):hover::after,
+.tabuleiro.circulo .celula:not(.x):not(.circulo):hover::before{
+    content: "";
+    height: calc(100px *0.9);
+    width: calc(100px*0.9);
+    background: black;
+    position: absolute;
+    border-radius: 50%;
+}
+
+/*Mensagem de Vitoria*/
+.msgVitoria{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    flex-direction: column;
+    }
+.msgVitoriobnt{
+        font-size: 2.5rem;
+        background-color: rgba(0, 255, 0, 1);
+        padding: 10px 15px;
+        cursor: pointer;
+        border-radius: 20px;
+        border: none;
+        margin-top: 10px;
+    }
+    .msgVitoriobnt:hover{
+        background-color: white;
+    }
+
+    .msgVitoriotxt{
+        color: white;
+        font-size: 5rem;
+    }
     
-}
-.tabela_linha{
-    border: 1px solid black;
-    border-collapse: collapse;
-    height: 200px;
-
-}
-.tabela_coluna{
-    border: 1px solid black;
-    border-collapse: collapse;
-    height: 200px;
-
-}
-
-.tabela-jogo:hover{
-    background-color: darkgray;
-}
-
-.X{
-    color: black;
-}
-
-.O{
-    color: red;
-}
-
-.bnt-reiniciar{
-    background-color: green;
-    font-size: 20px;
-    border-radius: 10px;
-}
+    .show_msgVitoria{
+         display: flex;
+    }

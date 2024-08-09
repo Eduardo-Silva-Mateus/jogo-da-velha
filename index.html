@@ -7,39 +7,22 @@
     <link rel="stylesheet" href="style-index.css">
 </head>
 <body>
-    <header = class="top">
-        <h1 class="top_titulo">Jogo da Velha</h1>
-        <div class="top_div">
-            <p class="modo_jogo">Escolha Seu Modo de Jogo: </p>
-            <a class="modo-jogo" href="index.html"> PVP </a>
-            <a class="modo-jogo" href="index.html"> PvC </a>
-        </div>
-    </header>
-    <main class="jogo">
- 
-        <p id="jogadores">Vez do Jogador:</p>
-        <table class="tabela-jogo" id="tabuleiro">
-            <tr class="tabela_linha">
-                <td class="tabela_coluna, tabela-jogo" id="celula-0-0"></td>
-                <td class="tabela_coluna, tabela-jogo" id="celula-0-1"></td>
-                <td class="tabela_coluna, tabela-jogo" id="celula-0-2"></td>
-            </tr>
-            <tr class="tabela_linha">
-                <td class="tabela_coluna, tabela-jogo" id="celula-1-0"></td>
-                <td class="tabela_coluna, tabela-jogo" id="celula-1-1"></td>
-                <td class="tabela_coluna, tabela-jogo" id="celula-1-2"></td>
-            </tr>
-            <tr class="tabela_linha">
-                <td class="tabela_coluna, tabela-jogo" id="celula-2-0"></td>
-                <td class="tabela_coluna, tabela-jogo" id="celula-2-1"></td>
-                <td class="tabela_coluna, tabela-jogo" id="celula-2-2"></td>
-            </tr>
-        </table>
-       <div id="status"></div>
-        <button class="bnt-reiniciar" id="reiniciar">Reiniciar</button>
+    <div class="tabuleiro x" data-tabuleiro>
+        <div class="celula" data-celula></div>
+        <div class="celula" data-celula></div>
+        <div class="celula" data-celula></div>
+        <div class="celula" data-celula></div>
+        <div class="celula" data-celula></div>
+        <div class="celula" data-celula></div>
+        <div class="celula" data-celula></div>
+        <div class="celula" data-celula></div>
+        <div class="celula" data-celula></div>
+    </div>
+
+    <div class="msgVitoria" winning>
+        <p class="msgVitoriotxt" date-msg-txt></p>
+        <button class="msgVitoriobnt" date-reiniciar>Reiniciar</button>
+    </div>
         <script src="scrip.js"></script>
-
-    </main>
-
 </body>
 </html>
