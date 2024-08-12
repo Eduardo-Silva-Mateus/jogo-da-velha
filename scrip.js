@@ -1,20 +1,40 @@
+/*criando variavel "cellElements" que por padrão está chamando o objeto "document" 
+e por sua vez está chamendo o metodo "querySelectorAll" que está indexdo com o valor data-celula
+que está nomeado no documento HTML*/
 const cellElements = document.querySelectorAll("[data-celula]");
+
+/*criando variavel "boar" que por padrão está chamando o objeto "document" 
+e chamando o metodo "querySelector"que está indexdo com o valor data-celula
+que est´nomeado no documento HTML*/
 const bord = document.querySelector("[data-tabuleiro]");
+
+/*criando variavel "msgtxtElements" que por padrão está chamando o objeto "document" 
+e chamando o metodo "querySelector"que está indexdo com o valor data-celula
+que est´nomeado no documento HTML*/
 const msgtxtElements = document.querySelector("[date-msg-txt]"); 
+
+/*criando variavel  "winningmsg"que por padrão está chamando o objeto "document" 
+e chamando o metodo "querySelector"que está indexdo com o valor data-celula
+que est´nomeado no documento HTML*/
 const winningmsg = document.querySelector("[winning]");
+
+/*criando variavel que por padrão está chamando o objeto "document" 
+e chamando o metodo "querySelectorAll"que está indexdo com o valor data-celula
+que est´nomeado no documento HTML*/
 const bntReiniciar = document.querySelector("[date-reiniciar]");
 
-let isCircleTurn;
+let isCircleTurn;// define a variavel "e"
 
+//criando um array para ver quais são as possibilidade de vitória
 const combinacaoDeVitoria =[
     [0, 1, 2], [3, 4, 5], [6, 7, 8],
     [0,3 , 6], [1, 4, 7], [2, 5, 8],
     [0, 4, 8], [2 ,4, 6],
 ];
-
+//Criando o método para começar o jogo
 const inciaJogo = () =>{
 
-  isCircleTurn = false;
+  isCircleTurn = false; // definindo que a vez do circulo é falsa
 
   for(const cell of cellElements) {
 
@@ -25,6 +45,7 @@ const inciaJogo = () =>{
 
   }
 
+  //define onde o mouse passa
   setHover();
 
   bord.classList.add('x');
@@ -33,8 +54,9 @@ const inciaJogo = () =>{
 
 };
 
+//cria leitura para fim do jogo
 const fimDeJogo = (empate) => {
-
+//verifica se deu empate
   if(empate){
 
     msgtxtElements.innerText = "Empate!";
@@ -49,6 +71,7 @@ const fimDeJogo = (empate) => {
 
  };
 
+ //verifica quak jogador venceu
 const verificaVitoria =(jogadorAtual) => {
 
   return combinacaoDeVitoria.some((combinacao) => {
@@ -66,7 +89,7 @@ const verificaVitoria =(jogadorAtual) => {
 const verificaEmpate = () =>{
 
   return [...cellElements].every(cell => {
-    
+
     return cell.classList.contains('x') || cell.classList.contains('circulo')
 
   });
@@ -98,12 +121,13 @@ const setHover = () =>{
 
  const mudaTurno=() =>{
 
-  isCircleTurn = !isCircleTurn;
+  isCircleTurn = !isCircleTurn; // a variavel tem que ser diferende dela mesma
 
   setHover();
 
  };
 
+ //criando metodo para verificar clique
 const verificarClique= (e) => {
 
   const cell = e.target;
@@ -133,6 +157,6 @@ const verificarClique= (e) => {
   
 };
 
-inciaJogo();
+inciaJogo(); //iniciando o jogo
 
-bntReiniciar.addEventListener('click', inciaJogo);
+bntReiniciar.addEventListener('click', inciaJogo); //criando modificação após o cliquie no botão
