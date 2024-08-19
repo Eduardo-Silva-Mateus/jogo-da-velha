@@ -1,13 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Pacifico&display=swap');
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
+header{
+    display: flex;
+    justify-content: center;
+    padding-top: 2%;
+}
+h2{
+    font-family: 'Pacifico';
+}
 body{
-    height: 100vh;
-    width: 100vh;
-    background: linear-gradient(90deg, rgba(102,165,238, 1)0%, rgba(153,255,255,1)100% );
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 255, 1)0%, rgba(150, 0, 255,1)100% );
 }
 
 header{
@@ -23,6 +31,9 @@ header{
     display: flex;
     width: 100%;
     height: 100%;
+    display: grid;
+    width: 100vw;
+    height: 100vh;
     display: grid;
     justify-content: center;
     align-content: center;
@@ -111,7 +122,27 @@ header{
     position: absolute;
     border-radius: 50%;
 }
-
+/*Contador de Vitórias*/
+.contadorVitorias {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .contadorVitoriasX, .contadorVitoriasO {
+    margin: 0 10px;
+  }
+  
+  .contadorVitoriasX {
+    color: #FF69B4; /* cor rosa para X */
+  }
+  
+  .contadorVitoriasO {
+    color: #34A853; /* cor verde para O */
+  }
 /*Mensagem de Vitoria*/
 .msgVitoria{
     display: none;
@@ -147,4 +178,12 @@ header{
     
     .show_msgVitoria{
          display: flex;
+    }
+
+    .rodape{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        font-family: 'Pacifico';
+        background-color:white;
     }
