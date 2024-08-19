@@ -1,37 +1,37 @@
 /*criando variavel "cellElements" que por padrão está chamando o objeto "document" 
 e por sua vez está chamendo o metodo "querySelectorAll" que está indexdo com o valor data-celula
-que está nomeado no documento HTML*/
+que está nomeado no documento HTML*/
 const cellElements = document.querySelectorAll("[data-celula]");
 
 /*criando variavel "boar" que por padrão está chamando o objeto "document" 
 e chamando o metodo "querySelector"que está indexdo com o valor data-celula
-que est´nomeado no documento HTML*/
+que est´nomeado no documento HTML*/
 const bord = document.querySelector("[data-tabuleiro]");
 
 /*criando variavel "msgtxtElements" que por padrão está chamando o objeto "document" 
 e chamando o metodo "querySelector"que está indexdo com o valor data-celula
-que est´nomeado no documento HTML*/
+que est´nomeado no documento HTML*/
 const msgtxtElements = document.querySelector("[date-msg-txt]"); 
 
 /*criando variavel  "winningmsg"que por padrão está chamando o objeto "document" 
 e chamando o metodo "querySelector"que está indexdo com o valor data-celula
-que est´nomeado no documento HTML*/
+que est´nomeado no documento HTML*/
 const winningmsg = document.querySelector("[winning]");
 
 /*criando variavel que por padrão está chamando o objeto "document" 
 e chamando o metodo "querySelectorAll"que está indexdo com o valor data-celula
-que est´nomeado no documento HTML*/
+que est´nomeado no documento HTML*/
 const bntReiniciar = document.querySelector("[date-reiniciar]");
 
 let isCircleTurn;// define a variavel "e"
 
-//criando um array para ver quais são as possibilidade de vitória
+//criando um array para ver quais são as possibilidade de vitória
 const combinacaoDeVitoria =[
     [0, 1, 2], [3, 4, 5], [6, 7, 8],
     [0,3 , 6], [1, 4, 7], [2, 5, 8],
     [0, 4, 8], [2 ,4, 6],
 ];
-//Criando o método para começar o jogo
+//Criando o método para começar o jogo
 const inciaJogo = () =>{
 
   isCircleTurn = false; // definindo que a vez do circulo é falsa
@@ -62,7 +62,7 @@ const fimDeJogo = (empate) => {
     msgtxtElements.innerText = "Empate!";
 
   } else {
-
+    
     msgtxtElements.innerText = isCircleTurn ? 'O Venceu!' : 'X Venceu!';
 
   }
