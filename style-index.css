@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Pacifico&display=swap');
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -11,13 +12,25 @@ header{
 }
 h2{
     font-family: 'Pacifico';
+    color: #ffffff;
 }
 body{
     height: 100%;
     width: 100%;
     background: linear-gradient(90deg, rgba(0, 0, 255, 1)0%, rgba(150, 0, 255,1)100% );
 }
-
+/*Botão Reiniciar Jogo*/
+.bntReiniciarPartida{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.bntReiniciarJogo{
+    border: 1px, solid black;
+    background-color: #ffffff;
+    width: 10%;
+    height: 10%;
+}
 header{
     display: flex;
     justify-content: center;
@@ -27,6 +40,7 @@ header{
     font-size: 50px;
 }
 
+/*Tabuleiro*/
 .tabuleiro{
     display: flex;
     width: 100%;
@@ -122,27 +136,49 @@ header{
     position: absolute;
     border-radius: 50%;
 }
+
 /*Contador de Vitórias*/
-.contadorVitorias {
+.contador{
     display: flex;
     justify-content: space-between;
     margin: 20px;
     font-size: 18px;
     font-weight: bold;
-    color: #333;
+    color: #ffffff;
   }
-  
-  .contadorVitoriasX, .contadorVitoriasO {
-    margin: 0 10px;
-  }
-  
-  .contadorVitoriasX {
-    color: #FF69B4; /* cor rosa para X */
-  }
-  
-  .contadorVitoriasO {
-    color: #34A853; /* cor verde para O */
-  }
+.contadorX,
+.contadorO,
+.Empate{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+
+}
+.contadorVitoriasX,
+.contadorVitoriasO,
+.contadorVitoriasEmpate{
+    display: flexbox;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.bntReiniciarPlacar{
+    border: 1px, solid, black;
+    border-radius: 10px;
+    background-color:  aliceblue;
+    width: 90px;
+    height: 90px;
+}
+
+.bntReiniciarPlacar:hover{
+    background-color: green;
+    border-radius: 10px;
+    border: 1px, solid, black;
+}
+
 /*Mensagem de Vitoria*/
 .msgVitoria{
     display: none;
@@ -179,6 +215,8 @@ header{
     .show_msgVitoria{
          display: flex;
     }
+
+    
 
     .rodape{
         display: flex;

@@ -7,9 +7,15 @@
     <link rel="stylesheet" href="style-index.css">
 </head>
 <body>
+
     <header>
         <h2>Jogo da Velha</h2>
     </header>
+
+    <div class="bntReiniciarPartida">
+        <button class="bntReiniciarJogo" bntJogo>Reiniciar Jogo</button>
+    </div>
+
     <div class="tabuleiro x" data-tabuleiro>
         <div class="celula" data-celula></div>
         <div class="celula" data-celula></div>
@@ -21,14 +27,30 @@
         <div class="celula" data-celula></div>
         <div class="celula" data-celula></div>
     </div>
-    <div class="contadorVitorias" data-score>
-        <p class="contadorVitoriasX" data-vitorias-x>Vitórias X: 0</p>
-        <p  class="contadorVitoriasO" data-vitorias-o>Vitórias O: 0</p>
+
+    <div class="contador" data-score>
+        <div class="contadorX">
+            <h3>Vitorias X:</h3>
+            <p class="contadorVitoriasX" data-X>0</p>
+        </div>
+        <div class="contadorO">
+            <h3>Vitorias O:</h3>
+            <p  class="contadorVitoriasO" data-O>0</p>
+        </div>
+        <div class="Empate">
+            <h3>Empates: </h3>
+            <p class="contadorVitoriasEmpate" data-Empate>0</p>
+        </div>
+        <div class="bntPlacar">
+            <button class="bntReiniciarPlacar" date-reiciniarplacar>Reiniciar Placar</button>
+        </div>
     </div>
+
     <div class="msgVitoria" winning>
         <p class="msgVitoriotxt" date-msg-txt></p>
         <button class="msgVitoriobnt" date-reiniciar>Reiniciar</button>
     </div>
+
     <footer>
         <div class="rodape">
             <p>Desenvolvido por Eduardo Mateus da Silva</p>
