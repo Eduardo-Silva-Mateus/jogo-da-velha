@@ -27,6 +27,9 @@ const restartPlacar = document.querySelector("[date-reiciniarplacar]");
 
 const reiniciaPartida = document.querySelector("[bntJogo]")
 
+const turnoAtual = document.querySelector("[data-turno]");
+let turno = "X"; //Predefine o turno inicial como X
+
 let isCircleTurn;// define a variavel "e"
 
 //criar as três variaveis para fazer a atualização da pontuação
@@ -156,11 +159,24 @@ const setHover = () =>{
 
 };
 
+const atualizaTurno= () =>{
+  if(isCircleTurn){
+    turno="O";
+    turnoAtual.innerText=turno;
+ }
+  else{
+    turno="X";
+    turnoAtual.innerText=turno;
+}  
+}
+
+
  const mudaTurno=() =>{
 
   isCircleTurn = !isCircleTurn; // a variavel tem que ser diferende dela mesma
 
   setHover();
+  atualizaTurno();
 
  };
 
@@ -219,5 +235,7 @@ bntReiniciar.addEventListener('click', inciaJogo); //criando modificação após
 restartPlacar.addEventListener('click', reiniciaPlacar);
 
 reiniciaPartida.addEventListener('click', reiniciaJogo);
+
+atualizaTurno();
 
 placarAtual();
